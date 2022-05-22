@@ -1,0 +1,45 @@
+.menuBtn{
+	background-color: transparent;
+	border: none;
+	color: $letrasBtn;
+    width: 100%;
+	
+	&:hover{
+		background-color: $hoverBtn;
+	}
+	
+	&:focus{
+		background-color: $fondoBtnFocus;
+		color: $letrasBtnFocus;
+	}
+}
+
+.menuBtnDark{
+	background-color: transparent;
+	border: none;
+	color: $letrasBtn;
+    width: 100%;
+	
+	&:hover{
+		background-color: $hoverBtn;
+	}
+	
+	&:focus{
+		background-color: $fondoBtnFocus;
+		color: $letrasBtnFocus;
+	}
+}
+
+a{
+    color: $letrasBtnFocus;
+	text-decoration: none;
+    &:hover{
+        color: $letrasBtnFocus;
+		text-decoration-line: underline;
+    }
+}
+
+.verMasBtn{
+	background-color: $fondoBtnTop;
+	padding: 0.5em;
+}

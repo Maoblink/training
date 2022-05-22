@@ -1,0 +1,236 @@
+
+
+h1{
+	color: $titulosLetras;
+	&#icon{
+		position: relative;
+		right: -32%;
+		top: -4.7em;
+		font-size: 2.5em;
+
+		@media screen and (max-width: 895px) {
+			font-size: 2em;
+			right: 0em;
+			top: -3.8em;
+			margin: auto;
+		}
+	}
+}
+
+header{
+
+	 & > img{
+		max-height: 26em;
+		max-width: 975px;
+		margin: auto;
+		display: block;
+		border-radius: 20px;
+
+		@media screen and (max-width: 975px) {
+			width: 100%;
+			margin: none;
+		}
+	}
+}
+
+#iconPerfil{
+	max-width: 10em;
+	position: relative;
+	right: 28%;
+	top: -5em;
+	border: 6px solid $fondoSegundo;
+
+	@media screen and (max-width: 895px) {
+		margin: auto;
+		top: -7.5em;
+		right: 0em;
+	}
+}
+
+button + .hiddenMenu{
+	display: block;
+}
+
+.hiddenMenu{
+	display: none;
+	background: {
+		color: $fondoSegundo;
+	}
+	
+	position: relative;
+	right: -2.5em;
+	top: -14em;
+	border: 1px solid $hoverBtn;
+	width: 11.5em;
+
+	@media screen and (max-width: 895px) {
+		margin: auto;
+		top: -16em;
+		right: 0em;
+	}
+
+	li{
+		background: {
+			color: $fondoSegundo;
+		}
+		a{
+			color: $letrasBtn;
+			text-decoration: none;
+			&:hover{
+				background-color: $hoverBtn;
+			}
+		}
+	}
+}
+
+#seccionBanner{
+
+	margin-top: 3.8em;
+	padding-bottom: 21em;
+
+	@media screen and (max-width: 895px) {
+		padding-bottom: 22em;
+	}
+
+	& #editBtn{
+		position: relative;
+		top: -11.5em;
+		margin-right: 16.5%;
+		
+		@media screen and (max-width: 895px) {
+			margin-right: 16em;
+			top: -7em;
+		}
+
+	}
+
+	button > img{
+		min-width: 1.5em;
+	}
+
+	& header > button{
+		position: relative;
+		margin-left: 68%;
+		top: -3.5em;
+
+		@media screen and (max-width: 895px) {
+		width: 3.4em;
+		height: 2.5em;
+		top: -3.5em;
+		margin-left: 85%;
+		overflow: hidden;
+		}
+	}
+}
+
+.navegacion{
+	border-top: 1px solid $letrasBtn;
+	margin: auto;
+	width: 55em;
+	position: relative;
+	top: -10.9em;
+	
+	@media screen and (max-width: 920px) {
+		width: 95%;
+	}
+
+	& ul{
+		list-style: none;
+	}
+
+	@media screen and (max-width: 895px) {
+		top: -6em;
+	}
+
+	@media screen and (max-width: 590px) {
+		#nav6{
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 575px) {
+		#nav5{
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 465px) {
+		#nav4{
+			display: none;
+		}
+	}
+}
+
+.absoluteCentering {
+	background-color: $fondoSegundo;
+	display: none;
+	left: 50%;
+	position: fixed;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.icon{
+    max-width: 3em;
+}
+
+.marginSeccion{
+	margin-bottom: 2%;
+}
+
+#seccionInfo{
+	width: 55em;
+	@media screen and (max-width: 920px) {
+		width: 95%;
+	}
+}
+
+.infoCard{
+	background-color: rgba(47, 47, 47, 1);
+	color: rgba(116, 116, 116, 1);
+	h2{
+    	text-align: center;
+		color: $titulosLetras;
+	}
+}
+
+li.infoCard{
+	border: none;
+}
+
+#cartaInfo{
+
+	input{
+		background-color: $fondoSegundo;
+		color: $letrasBtn;
+		border-color: $letrasBtn;
+	}
+
+	select{
+		background-color: $fondoSegundo;
+		color: $letrasBtn;
+		border-color: $letrasBtn;
+
+	}
+
+	& > div > ul{
+		border-left: 1px solid $letrasBtn;
+
+		@media screen and (max-width: 767px) {
+			border-left: none;
+		}
+	}
+}
+
+.eliminar{
+    height: 1em;
+    
+}
+
+h3{
+    font-size: 1em;
+}
+
+button img{
+    width: 1em;
+}

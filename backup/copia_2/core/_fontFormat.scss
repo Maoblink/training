@@ -1,0 +1,33 @@
+.sidebarBtnFont{
+	font-size: $sideBarLetraSize;
+	display: inline;
+	color: $letras;
+	font-weight: $btnWeight;
+}
+
+.articleBtnFont{
+	color: $letrasBtn;
+	font-size: 1.1em;
+	font-weight: $btnWeight;
+}
+
+.commentTitle{
+	color: $letras;
+	font-size: 0.8em;
+	font-weight: 700;
+}
+
+.commentBody{
+	color: $letras;
+	font-size: 1em;
+	font-weight: 400;
+}
+
+.commentEngagement{
+	margin-left: 4em;
+	h6{
+		display: inline;
+		color: $letrasBtn;
+		font-size: 0.8em;
+	}
+}

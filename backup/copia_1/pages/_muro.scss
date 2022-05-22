@@ -1,0 +1,301 @@
+aside{
+	h3{
+		color: $letras;
+	}
+	a{
+		color: $letrasBtn;
+	}
+	img{
+		max-width: 4em;
+		border-radius: 15px;
+	}
+
+	& > div{
+		border-radius: 15px;
+
+	}
+}
+
+#muroPrincipal{
+	max-height: 100%;
+
+	& > section{
+		overflow-y: auto;
+		height: 39.6em;
+	}
+
+	#centralSection::-webkit-scrollbar{
+		display: none;
+	}
+}
+
+.sideBar{
+
+	ul, li{
+		width: 96.7%;
+	}
+
+	& > ul, & > h1{
+		margin-left: $sideBarBtnMargin;
+	}
+
+	h1{
+		color: $letrasBtn;
+		font-size: $sidebarTitle;
+		margin-left: $sideBarTitleMargin;
+		margin-top: 0.8em;
+	}
+
+	button{
+		border-radius: $borderRadiusSidebar;
+	}
+
+	.sidebar2{
+		img{
+			border-radius: $borderRadiusSidebar;
+		}
+	}
+
+	button{
+		padding-top: $sideBarBtnYPadding;
+		padding-bottom: $sideBarBtnYPadding;
+		text-align: left;
+
+		img{
+			min-width: 2em;
+			margin-right: 1em;
+		}
+	}
+}
+
+#centralSection{
+
+	#crearPublicacion{
+
+		.menuBtnDark{
+			border-radius: $borderRadiusSidebar;
+		}
+
+		a img{
+			margin-left: -1.3em;
+		}
+
+		img{
+			min-width: 3em;
+		}
+	}
+
+	.publicacion{
+
+		background-color: $fondoTercero;
+		border-radius: $borderRadiusSidebar;
+		max-width: $maxWidthPost;
+		margin: auto;
+		margin-bottom: 2em;
+
+		.perfilPost{
+			max-width: $iconPublicacionesSize;
+			border-radius: 50%;
+		}
+
+		.postType{
+			max-width: 1em;
+		}
+
+		.menuPost{
+			max-width: 1.5em;
+			margin-top: 1em;
+		}
+
+		.imagenPost{
+			width: $maxWidthPost;
+			background-color: black;
+			text-align: center;
+
+			img{
+				max-width: $maxWidthPost;
+				margin: auto;
+			}
+
+		}
+
+		.postInteraction{
+			img{
+				max-width: 1.2em;
+				margin-left: -0.2em;
+			}
+		}
+
+		.interacciones{
+			display: none;
+		}
+
+
+		#btnCreate{
+			background-color: $hoverBtn;
+			color: $letrasBtn;
+
+			&:hover{
+				background-color: $hoverBtn-2;
+			}
+		}
+
+		#crearPublicacionPerfil{
+			max-width: $iconPublicacionesSize;
+		}
+
+		.commentArea{
+
+			form .avatar{
+				max-width: $iconCommentSize - 1em;
+			}
+
+			form textarea{
+				background-color: $fondoComentario;
+				border: none;
+				border-radius: 15px;
+				color: $letras;
+
+				&:focus{
+					border: none;
+					border-style: none;
+					outline: none;
+				}
+
+			}
+
+			.avatar{
+				max-width: $iconCommentSize;
+				border-radius: 50%;	
+			}
+
+			& > div > div{
+				
+				.comentario{
+					background-color: $fondoComentario;
+					border-radius: 19px;
+					max-width: 32.5em;
+
+					.commentBody{
+						max-width: 31.4em;
+						word-break: break-all;
+						white-space: normal;
+					}
+				}
+			}
+		}
+
+		.commentP .reply{
+			margin-left: 2em;
+
+			.comentario{
+				max-width: 30.5em;
+			}
+
+			.avatar{
+				max-width: $iconCommentSize - 0.5em;
+			}
+		}
+
+		.commentP{
+			position: relative;
+		}
+
+		.hilo{
+			
+			position: absolute;
+			max-width: 10px
+			-moz-transform: rotate(-90deg);
+		    -o-transform: rotate(-90deg);
+		    -webkit-transform: rotate(-90deg);
+		    transform: rotate(-90deg);
+		
+		}
+
+		.hilo + img{
+			-moz-transform: rotate(-90deg);
+		    -o-transform: rotate(-90deg);
+		    -webkit-transform: rotate(-90deg);
+		    transform: rotate(-90deg);
+		    width: 40px;
+		    height: 20px;
+		    position: relative;
+		    left: -2.7em;
+		    top: 1.8em;	
+		}
+
+		& > p{
+			color: $letras;
+		}
+
+		h2{
+			display: block;
+			margin-bottom: -0.1em;
+		}
+
+		h3{
+			display: inline;
+			color: $letrasBtn;
+			font-size: 1em;
+			font-weight: 500;
+		}
+
+		h4{
+			display: inline;
+			color: $letrasBtn;
+			font-size: 0.9em;
+			font-weight: 400;
+		}
+
+		a{
+			border-radius: $borderRadiusSidebar;
+			padding: 0.3em 0em;
+
+			&:hover{
+				text-decoration: none;
+			}
+
+			img{
+				max-width: 1.3em;
+				margin-right: 0.6em;
+			}
+		}
+	}
+
+	ul{
+		list-style-type: none;
+
+		figure{
+			position: relative;
+			top: -1em;
+		}
+
+		li > img{
+			max-width: $iconStorySize;
+			border: $StoryIconBorder solid $iconBorderColor;
+			position: relative;
+			top: 3em;
+			left: 2em;
+			z-index: 1;
+		}
+
+		figure img{
+			max-width: 9.5em;
+			max-height: auto;
+			border-radius: 15px;
+			position: relative;
+			left: 1em;
+		}
+
+		figcaption{
+			color: $letras;
+			font-size: $storyTitleSize;
+			max-width: 6.5em;
+			max-height: 2.9em;
+			position: relative;
+			top: -3.5em;
+			left: 1.9em;
+			overflow: hidden;
+		}
+	}
+}

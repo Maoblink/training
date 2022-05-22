@@ -1,0 +1,51 @@
+
+
+.navegacionTop{
+	background-color: $fondoSegundo;
+	border-bottom: 1px solid $letrasBtn;
+	p{
+		display: inline;
+	}
+
+	.seleccionado{
+		border: none;
+		width: 100%;
+		background-color: $fondoBtnFocus;
+		color: $letrasBtnFocus;
+	}
+
+	#brandIcon{
+		width: 2.2em;
+	}
+	.navbarColapso{
+		img{
+			width: 1.5em;
+			margin: 0.3em 1.5em;
+			@media screen and (max-width: 847px) {
+				display: none;
+			}
+		}
+		form{
+			input{
+				@media screen and (max-width: 940px) {
+					display: none;
+				}
+			}
+			
+		}
+
+	}
+	.navbarOut{
+		.menuBtn{
+			background-color:$fondoBtnTop;
+			&:focus{
+				background-color: $fondoBtnFocus;
+				border: none;
+			}
+		}
+
+		img{
+			width: 1.5em;
+		}
+	}
+}

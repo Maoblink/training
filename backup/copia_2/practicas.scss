@@ -1,0 +1,73 @@
+// Scss Document
+
+$tamanioTexto: 200px;
+
+.contenedor{
+    h1{
+        font: {
+            family: arial;
+            size: $tamanioTexto;
+            weight: bold;
+        }
+    }
+    p{
+        color: red;
+    }
+}
+
+a{
+    color: black;
+    
+    &:hover{
+        color: red;
+    }
+}
+
+@mixin encabezadoh2($tamanio){
+    
+    h2{
+        font-size: $tamanio + 1;
+    }
+    
+}
+
+@include encabezadoh2(6em);
+
+%encabezadoMarron{
+    font{
+        size: 1.5em;
+    }
+    
+    color: aqua;
+    background-color: black;
+}
+
+
+h3{
+    @extend %encabezadoMarron;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
