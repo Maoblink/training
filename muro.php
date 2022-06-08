@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="Description" content="Ve todas las publicaciones de tus amigos">
 	<title>Muro</title>
+	
 	<link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.css">
 	<link rel="stylesheet" href="CSS/main.css">
 	<link rel="icon" type="image.x-icon" href="Imagenes/iconosMenu/diceIcon.png">
@@ -13,6 +14,8 @@
 	<script src="Javascript/live.js"></script>
 	<script src="Javascript/jquery.autoresize.min.js"></script>
 	<script src="Javascript/funciones.js"></script>
+	<script src="Javascript/pages/muro.js"></script>
+
 	<script>
 		$(document).ready(function(){
 			$('textarea').autoResize();

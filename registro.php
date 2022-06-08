@@ -56,6 +56,7 @@ if (isset($_POST['login'])){
         $_SESSION["countrySession"] = $array['pais'];
         $_SESSION["ageSession"] = $array['edad'];
         $_SESSION["hobiesSession"] = $array['gustos'];
+        $_SESSION["iconSession"] = $array['iconPerfil'];
         
         if($array){
             

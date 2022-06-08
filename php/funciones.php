@@ -22,4 +22,8 @@ function tiempo_pasado($tiempo){
 
 }
 
+function writeConsole($text){
+	echo "<script>console.log('".$text."')</script>";
+}
+
  ?>

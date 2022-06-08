@@ -185,6 +185,21 @@ aside{
 			}
 		}
 
+		.replyForm{
+
+			margin-left: 3em;
+			margin-bottom: 5px;
+
+			.avatarReply{
+				max-width: $iconCommentSize - 1.5em;
+				border-radius: 50%;
+			}
+
+			textarea{
+				max-width: 30em;
+			}
+		}
+
 		.commentP .reply{
 			margin-left: 2em;
 
@@ -197,6 +212,28 @@ aside{
 			}
 		}
 
+		.commentCore:hover .commentMenu{
+			display: block;
+		}
+
+		.commentMenu{
+			max-width: 2em;
+			max-height: 2em;
+			border-radius: 50%;
+			padding-top: 0px;
+			margin-left: 5px;
+			display: none;
+			padding-left: 8px;
+
+			&:hover{
+				background-color: $hoverBtn;	
+			}
+
+			img{
+				max-width: 1em;
+			}
+		}
+
 		.commentP{
 			position: relative;
 		}
@@ -205,8 +242,40 @@ aside{
 			top: 2.5em;
 		}
 
+		.commentMenuWraper{
+			display: relative;
+		}
+
+		.commentMenuBlock{
+			background-color: $fondoSegundo;
+			color: $letras;
+			font-weight: 500;
+			width: 180px;
+			padding: 8px;
+			border-radius: 15px;
+			position: absolute;
+			margin-left: 3em;
+			margin-top: -2em;
+			display: none;
+
+			.menuBtnDark{
+				font-weight: 500;
+				color: $letras;
+				text-align: left;
+			}
+
+			li{
+				width: 100%;
+			}
+
+			& a:hover{
+				background-color: $hoverBtn;
+			}
+		}
+
 		.hilo{
 			
+			display: none;
 			position: absolute;
 			left: 1em;
 			max-width: 18px;
@@ -223,6 +292,7 @@ aside{
 		    height: 20px;
 		    position: absolute;
 		    left: 0.9em;	
+		    display: none;
 		}
 
 		& > p{

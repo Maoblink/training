@@ -89,7 +89,7 @@ aside{
 
 		background-color: $fondoTercero;
 		border-radius: $borderRadiusSidebar;
-		max-width: $maxWidthPost;
+		width: $maxWidthPost;
 		margin: auto;
 		margin-bottom: 2em;
 
@@ -177,7 +177,7 @@ aside{
 					max-width: 32.5em;
 
 					.commentBody{
-						max-width: 31.4em;
+						max-width: 30.9em;
 						word-break: break-all;
 						white-space: normal;
 					}
@@ -185,11 +185,26 @@ aside{
 			}
 		}
 
+		.replyForm{
+
+			margin-left: 3em;
+			margin-bottom: 5px;
+
+			.avatarReply{
+				max-width: $iconCommentSize - 1.5em;
+				border-radius: 50%;
+			}
+
+			textarea{
+				max-width: 30em;
+			}
+		}
+
 		.commentP .reply{
 			margin-left: 2em;
 
 			.comentario{
-				max-width: 30.5em;
+				max-width: 29.9em;
 			}
 
 			.avatar{
@@ -197,20 +212,76 @@ aside{
 			}
 		}
 
+		.commentCore:hover .commentMenu{
+			display: block;
+		}
+
+		.commentMenu{
+			max-width: 2em;
+			max-height: 2em;
+			border-radius: 50%;
+			padding-top: 0px;
+			margin-left: 5px;
+			display: none;
+			padding-left: 8px;
+
+			&:hover{
+				background-color: $hoverBtn;	
+			}
+
+			img{
+				max-width: 1em;
+			}
+		}
+
 		.commentP{
 			position: relative;
 		}
 
+		.commentEngagement + .hilo{
+			top: 2.5em;
+		}
+
+		.commentMenuWraper{
+			display: relative;
+		}
+
+		.commentMenuBlock{
+			background-color: $fondoSegundo;
+			color: $letras;
+			font-weight: 500;
+			width: 180px;
+			padding: 8px;
+			border-radius: 15px;
+			position: absolute;
+			margin-left: 3em;
+			margin-top: -2em;
+			display: none;
+
+			.menuBtnDark{
+				font-weight: 500;
+				color: $letras;
+				text-align: left;
+			}
+
+			li{
+				width: 100%;
+			}
+
+			& a:hover{
+				background-color: $hoverBtn;
+			}
+		}
+
 		.hilo{
 			
+			display: none;
 			position: absolute;
-			max-width: 10px
-			-moz-transform: rotate(-90deg);
-		    -o-transform: rotate(-90deg);
-		    -webkit-transform: rotate(-90deg);
-		    transform: rotate(-90deg);
+			left: 1em;
+			max-width: 18px;
 		
 		}
+
 
 		.hilo + img{
 			-moz-transform: rotate(-90deg);
@@ -219,9 +290,9 @@ aside{
 		    transform: rotate(-90deg);
 		    width: 40px;
 		    height: 20px;
-		    position: relative;
-		    left: -2.7em;
-		    top: 1.8em;	
+		    position: absolute;
+		    left: 0.9em;	
+		    display: none;
 		}
 
 		& > p{

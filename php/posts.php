@@ -8,6 +8,7 @@ $consulta = mysqli_query($conex,$query);
 <?php 
 
 $idReply = 1;
+$idForm = 1;
 while ($post = mysqli_fetch_array($consulta)) {
 
 	$query = "SELECT * from usuarios where username = '".$post['user']."'";
@@ -102,7 +103,7 @@ while ($post = mysqli_fetch_array($consulta)) {
 	**************************************************************************** -->
 
 					<div class="commentArea mx-3">
-						<div>';
+						<div class="commentWraper">';
 							
 							$idComentario = 1;
 
@@ -115,18 +116,37 @@ while ($post = mysqli_fetch_array($consulta)) {
 								$fechaComentario = tiempo_pasado($comentarios["date"]);
 
 								echo 
-								'<div class="commentP row gx-3" id="comentario'.$comentarios["idComentario"].'">
-									<img class="col-auto align-self-start avatar" src="'.$commentUser["iconPerfil"].'" alt="Usuario">
-									<div class="col-auto comentario p-2" id="bloque'.$idComentario.'">
-										<h5 class="commentTitle p-0 m-0">'.$commentUser["nombre"].' '.$commentUser["apellidos"].'</h5>
-										<p class="commentBody p-0 m-0">'.$comentarios["text"].'</p>
-									</div>
-									<div class="w-100"></div>
-									<div class="commentEngagement col-6">
-										<a class="me-3" role="button"><h6>Me Gusta</h6></a>
-										<a class="me-3" role="button"><h6>Responder</h6></a>
-										<h6 class="">'.$fechaComentario.'</h6>
+								'<div class="commentP" idReply="'.$comentarios["idComentario"].'" id="comentario'.$comentarios["idComentario"].'">
+									<div class="commentCore row gx-3">
+										<img class="col-auto align-self-start avatar" src="'.$commentUser["iconPerfil"].'" alt="Usuario">
+										<div class="col-auto comentario p-2" id="bloque'.$idComentario.'">
+											<h5 class="commentTitle p-0 m-0">'.$commentUser["nombre"].' '.$commentUser["apellidos"].'</h5>
+											<p class="commentBody p-0 m-0">'.$comentarios["text"].'</p>
+										</div>
+										<div class="col-auto commentMenuWraper">
+											<div class="commentMenu">
+												<a role="button"><img src="../Imagenes/iconosMenu/threePointIcon.png" alt="Menu Comentario"></a>
+											</div>
+											<ul class="commentMenuBlock btn-group-vertical">';
+													if($commentUser["username"] == $_SESSION["userSession"]){
+														echo "<li><a class='btn menuBtnDark deleteComment' role='button'>Eliminar</a></li>
+														<li><a class='btn menuBtnDark' role='button'>Editar</a></li>";
+													}else{
+														echo "<li><a class='btn menuBtnDark' role='button'>Ocultar Comentario</a></li> 
+														<li><a class='btn menuBtnDark' role='button'>Ocultar Comentario</a></li>";
+													};
+													echo '
+											</ul>
+										</div>
+										<div class="w-100"></div>
+										<div class="commentEngagement col-6" reply="false" id="engagement'.$comentarios["idComentario"].'">
+											<a class="me-3" role="button"><h6>Me Gusta</h6></a>
+											<a class="me-3 replyButton" role="button"><h6>Responder</h6></a>
+											<h6 class="">'.$fechaComentario.'</h6>
+										</div> 
+										<div class="w-100"></div> 
 									</div>';
+
 
 									$query = "SELECT * FROM comentarios WHERE reply = ".$comentarios['idComentario']."";
 									$askReply = mysqli_query($conex,$query);
@@ -140,22 +160,37 @@ while ($post = mysqli_fetch_array($consulta)) {
 										$askUser = mysqli_query($conex,$query);
 										$replyUser = mysqli_fetch_array($askUser);
 										$fechaComentario = tiempo_pasado($respuestas["date"]);
-
-
+						
 										echo
 										'<img class="hilo" id="hilo'.$idReply.'" src="Imagenes/iconosMenu/lineaComentarioVertical.png" alt="line">
 										<img class="" id="curva'.$idReply.'" src="Imagenes/iconosMenu/lineaCurvaComentario.png" alt="line">
-										<div class="row reply gx-3" id="comentario'.$respuestas["idComentario"].'">
-											<img class="col-auto align-self-start avatar" src="'.$replyUser["iconPerfil"].'" alt="Alucard">
-											<div class="col-auto comentario p-2" id="bloque'.$idComentario.'">
-												<h5 class="commentTitle p-0 m-0">'.$replyUser["nombre"]." ".$replyUser["apellidos"].'</h5>
-												<p class="commentBody p-0 m-0">'.$respuestas["text"].'</p>
-											</div>
-											<div class="w-100"></div>
-											<div class="commentEngagement col-6">
-												<a class="me-3" role="button"><h6>Me Gusta</h6></a>
-												<a class="me-3" role="button"><h6>Responder</h6></a>
-												<h6 class="">'.$fechaComentario.'</h6>
+										<div class="reply" idReply="'.$respuestas["idComentario"].'" id="comentario'.$respuestas["idComentario"].'">
+											<div class="commentCore row gx-3">
+												<img class="col-auto align-self-start avatar" src="'.$replyUser["iconPerfil"].'" alt="Alucard">
+												<div class="col-auto comentario p-2" id="bloque'.$idComentario.'">
+													<h5 class="commentTitle p-0 m-0">'.$replyUser["nombre"]." ".$replyUser["apellidos"].'</h5>
+													<p class="commentBody p-0 m-0">'.$respuestas["text"].'</p>
+												</div>
+												<div class="col-auto commentMenuWraper">
+													<div class="commentMenu">
+														<a role="button"><img src="../Imagenes/iconosMenu/threePointIcon.png" alt="Menu Comentario"></a>
+													</div>
+													<ul class="commentMenuBlock btn-group-vertical">';
+															if($replyUser["username"] == $_SESSION["userSession"]){
+																echo "<li><a class='btn menuBtnDark deleteComment' role='button'>Eliminar</a></li>
+																<li><a class='btn menuBtnDark' role='button'>Editar</a></li>";
+															}else{
+																echo "<li><a class='btn menuBtnDark' role='button'>Ocultar Comentario</a></li> 
+																<li><a class='btn menuBtnDark' role='button'>Ocultar Comentario</a></li>";
+															};
+															echo '
+													</ul>
+												</div>
+												<div class="w-100"></div>
+												<div class="commentEngagement col-6">
+													<a class="me-3" role="button"><h6>Me Gusta</h6></a>
+													<h6 class="">'.$fechaComentario.'</h6>
+												</div>
 											</div>
 										</div>';
 										$idTarget = $idComentario - 1;
@@ -172,10 +207,15 @@ while ($post = mysqli_fetch_array($consulta)) {
 							};
 
 						echo '</div>
-						<form class="d-flex" method="post">
+						<form class="d-flex commentForm" id="commentForm'.$idForm.'" method="post" action="#">
 							<a><img class="avatar" src="'.$iconPerfilSession.'" alt="Perfil"></a>
-							<textarea class="flex-fill px-2 mt-1 mb-2" placeholder="Escribe un comentario..." type="text" name="commentBody"></textarea>
-						</form>
+							<textarea class="flex-fill px-2 mt-1 mb-2 commentBody" placeholder="Escribe un comentario..." type="text" name="commentBody"></textarea>
+							<input class="idForm" type="hidden" name="id" value="'.$post["id"].'">
+							<input class="userForm" type="hidden" name="user" value="'.$userSession.'">
+							<input class="replyForm" type="hidden" name="reply" value="0">
+						</form>';
+						$idForm++;
+						echo '
 					</div>
 
 				</article>';
