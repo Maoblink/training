@@ -68,6 +68,229 @@ aside{
 	}
 }
 
+#creatPostForm{
+	position: absolute;
+	/* top: 23%;
+	left: 23%; */
+	background-color: $fondoSegundo;
+	border-radius: 15px;
+	color: white;
+	width: 550px;
+	z-index: 2;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+
+	.avatarPoster{
+		margin: 13px 0px 13px 20px;
+	}
+
+	#createMenu{
+		list-style: none;
+		border: 2px solid $divisora;
+		border-radius: 15px;
+		padding: 12px 0px;
+		margin: 30px 20px 15px 20px;
+		padding: 15px 20px;
+
+		#createMenuPoints{
+
+			button{
+				padding-bottom: 3px;
+				border-radius: 50%;
+			}
+
+			img{
+				width: 1em;
+				height: 0.6em;
+			}
+		}
+
+		 li{
+
+			img{
+				width: 2em;
+				height: 1.7em;
+			}
+		}
+
+		li{
+			margin: 2px 3px;
+		}
+
+	}
+
+	& li:first-child{
+		padding: 0.4em 0em;
+		color: $letras;
+		font-weight: 700;
+	}
+
+	h3{
+		font-size: $windowFontSizeTitle;
+		font-weight: $windowFontWeightTitle;
+	}
+
+	h2{
+		font-size: 15px;
+		font-weight: 700;
+		color: $letras;
+	}
+
+	textarea{
+		background-color: transparent;
+		border: none;
+		width: 96.5%;
+		min-height: 120px;
+		caret-color: $letrasBtn;
+		color: $letras;
+
+		&:focus{
+			outline: none;
+			border: none;
+		}
+
+		&::placeholder{
+			font-size: 1.7em;
+			font-weight: 500;
+		}
+	}
+
+}
+
+#createPostHeader{
+	
+	.closeBtn{
+		position: absolute;
+		top: 0.5em;
+		left: 20.9em;
+		padding: 3px;
+	}
+}
+
+.createFormHeader{
+	border-bottom: 1px solid $divisora;
+	padding: 15px 0px;
+	text-align: center;
+
+	.closeBtn{
+		width: 1.6em;
+		height: 1.6em;
+		font-size: 1.5em;
+	}
+
+}
+
+#createPostNameWrapper{
+	display: inline;
+	max-width: 30%;
+	margin-left: -12px;
+	margin-top: 13px;
+}
+
+#createPostWrapper{
+	position: relative;
+}
+
+#createContentWrapper{
+	text-align: center;
+	max-height: 220px;
+	overflow: auto;
+}
+
+#createMenuSecondary{
+	list-style: none;
+	margin: 4px 12px 5px 12px;
+	padding: 0px;
+
+	img{
+		max-width: 1.7em;
+	}
+}
+
+.avatarPoster{
+	border-radius: 50%;
+	width: 69px;
+}
+
+#namePost{
+	margin-bottom: 2px;
+}
+
+#createSubmitWrapper{
+	margin: 0px 20px 20px 20px;
+}
+
+#addToPostOptions{
+	list-style: none;
+
+	li{
+		padding-left: 0px;
+	}
+
+	img{
+		width: 1.5em;
+	}
+
+	button{
+		text-align: left;
+		color: $letras;
+		font-size: 1.1em;
+		font-weight: 600;
+		border-radius: 7px;
+		padding: 10px;
+	}
+}
+
+#addToPostHeader{
+
+	.closeBtn{
+		position: absolute;
+		top: 0.4em;
+		left: 0.4em;
+		padding: 0px 3px 3px 3px;
+	}
+}
+
+#audienceMenu{
+	max-height: 500px;
+	overflow: scroll;
+	padding: 0px 20px;
+}
+
+#audienceMenuOptions{
+	width: 100%;
+
+	button{
+		border-radius: 15px;
+		text-align: left;
+
+		&:hover{
+			color: $letras;
+		}
+	}
+
+	img{
+		width: 3.3em;
+		background-color: $fondoBtnTop;
+		border-radius: 50%;
+		padding: 12px;
+	}
+
+	h4{
+		color: $letras;
+		font-size: 1.2em;
+		font-weight: 700;
+		margin-bottom: 0px;
+	}
+
+	p{
+		font-weight: 500;
+		margin-top: 0px;
+	}
+}
+
 #centralSection{
 
 	#crearPublicacion{
@@ -84,6 +307,11 @@ aside{
 			min-width: 3em;
 		}
 	}
+
+// ****************************************************************************
+// *                                Publicacion                               *
+// ****************************************************************************
+
 
 	.publicacion{
 
@@ -143,6 +371,10 @@ aside{
 		#crearPublicacionPerfil{
 			max-width: $iconPublicacionesSize;
 		}
+
+// ****************************************************************************
+// *                                 Comments                                 *
+// ****************************************************************************
 
 		.commentArea{
 

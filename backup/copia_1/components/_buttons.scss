@@ -43,3 +43,35 @@ a{
 	background-color: $fondoBtnTop;
 	padding: 0.5em;
 }
+
+.circularButton{
+	background-color: transparent;
+	border-radius: 50%;
+	border: none;
+	padding: 5px;
+
+	&:hover{
+		background-color: $fondoBtnTop;
+	}
+}
+
+.closeBtn{
+	border-radius: 50%;
+	background-color: $hoverBtn;
+	border: none;
+	color: gray;
+
+	&:hover{
+		background-color: $fondoBtnDark;
+	}
+}
+
+.publicBtn{
+	background-color: $fondoBtnTop;
+	border-radius: 4px;
+	border: none;
+	color: $letras;
+	padding: 5px;
+	font-size: 14px;
+	font-weight: 600;
+}

@@ -17,4 +17,9 @@ $(document).ready(function(){
 
     deleteComment(idComentario);
   });
+
+  $('#audienceMenuOptions button').click(function(e){
+    $("input", this).prop("checked", true);
+  });
+
 });

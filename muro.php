@@ -48,6 +48,168 @@
 	?>
 
 <!-- ****************************************************************************
+*                             Create Post Form                             *
+**************************************************************************** -->
+
+		<form action="" id="creatPostForm">
+			<div class="collapse multi-collapse audience-collapse show" id="createPostWrapper">
+				<div class="createFormHeader" id="createPostHeader">
+					<h3 class="mx-auto">Crear Publicación</h3>
+					<button class="closeBtn">X</button>
+				</div>
+
+				<div id="createPostBody">
+					<div class="row" id="postIfo">
+						<img src="<?php echo $iconPerfilSession; ?>" alt="Avatar Perfil" class="col-1 avatarPoster">
+						<div id="createPostNameWrapper">
+							<h2 id="namePost"><?php echo ($nameSession." ".$lNamesSession); ?></h2>
+							<button class="publicBtn" type="button" data-bs-toggle="collapse" data-bs-target=".audience-collapse" aria-expanded="false" aria-controls="#createPostWrapper #audienceMenu">
+								<img class="me-2" src="Imagenes/iconosMenu/world.png" alt="Publico">Publico<img class="ms-2" src="Imagenes/iconosMenu/arrowDown" alt="Público">
+							</button>
+						</div>
+					</div>
+
+					<div id="createContentWrapper">
+						<textarea name="text" id="creatPostText" placeholder="¿Qué estás pensando, <?php echo ($nameSession); ?>?"></textarea>
+					</div>
+
+					<ul class="d-flex" id="createMenuSecondary">
+						<li class="me-auto"><a role="button"><img src="Imagenes/iconosMenu/colorRullet.png" alt="Añadir Emojis"></a></li>
+						<li><a role="button"><img src="Imagenes/iconosMenu/emoji.png" alt="Añadir Emojis"></a></li>
+					</ul>
+
+					<ul class="d-flex justify-content-between" id="createMenu">
+						<li><a role="button">Añadir a tu Publicación</a></li>
+						<li><button class="circularButton"><img src="Imagenes/iconosMenu/addImage.png" alt="Añadir Imagen"></button></li>
+						<li><button class="circularButton"><img src="Imagenes/iconosMenu/etiquetar.png" alt="Etiquetar a un Amigo"></button></li>
+						<li><button class="circularButton"><img src="Imagenes/iconosMenu/emoji.png" alt="Añadir Emojis"></button></li>
+						<li><button class="circularButton"><img src="Imagenes/iconosMenu/location.webp" alt="Registrar Visita"></button></li>
+						<li><button class="circularButton"><img src="Imagenes/iconosMenu/micro.png" alt="Sesión de Preguntas y Respuestas"></button></li>
+						<li class="align-self-center" id="createMenuPoints"><button class="circularButton" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="#createPostWrapper #addToPostMenu"><img src="Imagenes/iconosMenu/threePointIcon.png" alt="Más"></button></li>
+					</ul>
+
+					<div class="d-grid gap-2" id="createSubmitWrapper">
+						<button class="btn btn-primary" id="createSubmit">Publicar</button>
+					</div>
+
+				</div>
+			</div>
+
+<!-- ****************************************************************************
+*                             Add To Post Menu                             *
+****************************************************************************  -->
+
+			<div class="collapse multi-collapse" id="addToPostMenu">
+
+				<div class="createFormHeader" id="addToPostHeader">
+					<button class="closeBtn" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="#createPostWrapper #addToPostMenu"><img src="Imagenes/iconosMenu/arrowLeft.png" alt="Retroceder"></button>
+					<h3>Añadir a tu Publicación</h3>
+				</div>
+
+				<ul class="row" id="addToPostOptions">
+					<li class="col-6 gy-2"><button class="menuBtnDark d-flex gap-2"><img src="Imagenes/iconosMenu/addImage.png" alt="Añadir Imagen/Video"><span>Foto/Video</span></button></li>
+					<li class="col-6 gy-2"><button class="menuBtnDark d-flex gap-2"><img src="Imagenes/iconosMenu/etiquetar.png" alt="Etiquetar"><spam>Etiquetar</spam></button></li>
+					<li class="col-6 gy-2"><button class="menuBtnDark d-flex gap-2"><img src="Imagenes/iconosMenu/emoji.png" alt="Sentimiento/Adtividad"><span>Sentimiento/Adtividad</span></button></li>
+					<li class="col-6 gy-2"><button class="menuBtnDark d-flex gap-2"><img src="Imagenes/iconosMenu/location.webp" alt="Registrar Visita"><span>Registrar Visita</span></button></li>
+					<li class="col-6 gy-2"><button class="menuBtnDark d-flex gap-2"><img src="Imagenes/iconosMenu/micro.png" alt="Sesión de Preguntas y Repuestas"><span>Sesión de Preguntas y Repuestas</span></button></li>
+					<li class="col-6 gy-2"><button class="menuBtnDark d-flex gap-2"><img src="Imagenes/iconosMenu/flag.webp" alt="Acontecimiento Importante"><span>Acontecimiento Importante</span></button></li>
+					<li class="col-6 gy-2"><button class="menuBtnDark d-flex gap-2"><img src="Imagenes/iconosMenu/gif.png" alt="Gif"><span>Gif</span></button></li>
+					<li class="col-6 gy-2"><button class="menuBtnDark d-flex gap-2"><img src="Imagenes/iconosMenu/live.png" alt="Directo"><span>Video en Directo</span></button></li>
+				</ul>
+
+			</div>
+
+<!-- ****************************************************************************
+*                               Audience Menu                              *
+****************************************************************************  -->
+
+			<div class="collapse audience-collapse" id="audienceMenu">
+
+				<div class="createFormHeader" id="audienceMenuHeader">
+					<button class="closeBtn" type="button" data-bs-toggle="collapse" data-bs-target=".audience-collapse" aria-expanded="false" aria-controls="#createPostWrapper #audienceMenu"><img src="Imagenes/iconosMenu/arrowLeft.png" alt="Retroceder"></button>
+					<h3>Seleccionar Audiencia</h3>
+				</div>
+
+				<div id="audienceMenuLabel">
+					<h4>¿Quién puede ver tu publicación?</h4>
+					<p>Tu publicación se mostrará en la sección de noticias, en tu perfil y en los resultados de búsqueda.</p>
+				</div>
+
+				<div class="btn-group-vertical" id="audienceMenuOptions" role="group">
+					<button class="btn menuBtnDark d-flex gap-2 align-items-center" type="button" id="publicBtn">
+						<img class="marcoCircularBtn" src="Imagenes/iconosMenu/world.png" alt="Público">
+						<div>
+							<h4>Público</h4>
+							<p>Cualquiera dentro y fuera de Facebook</p>
+						</div>
+						<label class="checkLabel ms-auto">
+						  <input type="radio" name="audience" value="publico" class="ms-auto align-self-center">
+						  <span class="checkmark"></span>
+						</label>
+					</button>
+					<button class="btn menuBtnDark d-flex gap-2 align-items-center" type="button">
+						<img class="marcoCircularBtn" src="Imagenes/iconosMenu/threeFriends.png" alt="Amigos">
+						<div>
+							<h4>Amigos</h4>
+							<p>Tus Amigos de Facebook</p>
+						</div>
+						<label class="checkLabel ms-auto">
+						  <input type="radio" name="audience" value="publico" class="ms-auto align-self-center">
+						  <span class="checkmark"></span>
+						</label>
+					</button>
+					<button class="btn menuBtnDark d-flex gap-2 align-items-center" type="button">
+						<img class="marcoCircularBtn" src="Imagenes/iconosMenu/amigosExcepto.png" alt="Amigos excepto">
+						<div>
+							<h4>Amigos, Excepto</h4>
+							<p>Elige qué amigos pueden ver tus publicaciones</p>
+						</div>
+						<img class="ms-auto" src="Imagenes/iconosMenu/rightArrowMini.png" alt="amigos excepto">
+					</button>
+					<button class="btn menuBtnDark d-flex gap-2 align-items-center" type="button">
+						<img class="marcoCircularBtn" src="Imagenes/iconosMenu/persona.png" alt="Amigos concretos">
+						<div>
+							<h4>Amigos concretos</h4>
+							<p>Mostrar solo a algunos amigos</p>
+						</div>
+						<img class="ms-auto" src="Imagenes/iconosMenu/rightArrowMini.png" alt="amigos excepto">
+					</button>
+					<button class="btn menuBtnDark d-flex gap-2 align-items-center" type="button">
+						<img class="marcoCircularBtn" src="Imagenes/iconosMenu/lock.webp" alt="Solo yo">
+						<div>
+							<h4>Solo yo</h4>
+						</div>
+						<label class="checkLabel ms-auto">
+						  <input type="radio" name="audience" value="publico" class="ms-auto align-self-center">
+						  <span class="checkmark"></span>
+						</label>
+					</button>
+					<button class="btn menuBtnDark d-flex gap-2 align-items-center" type="button">
+						<img class="marcoCircularBtn" src="Imagenes/iconosMenu/engranaje.png" alt="Personalizada">
+						<div>
+							<h4>Personalizada</h4>
+							<p>Incluir y excluir amigos y listas</p>
+						</div>
+						<img class="ms-auto" src="Imagenes/iconosMenu/rightArrowMini.png" alt="amigos excepto">
+					</button>
+					<button class="btn menuBtnDark d-flex gap-2 align-items-center" type="button">
+						<img class="marcoCircularBtn" src="Imagenes/iconosMenu/star.png" alt="Mejores amigos">
+						<div>
+							<h4>Mejores amigos</h4>
+							<p>Tu lista personalizada</p>
+						</div>
+						<label class="checkLabel ms-auto">
+						  <input type="radio" name="audience" value="publico" class="ms-auto align-self-center">
+						  <span class="checkmark"></span>
+						</label>
+					</button>
+				</div>
+
+			</div>
+
+		</form>
+
+<!-- ****************************************************************************
 *                               Left Side Bar                              *
 **************************************************************************** -->
 
@@ -95,8 +257,10 @@
 *                             Sección Principal                            *
 **************************************************************************** -->
 
+<!-- ****************************************************************************
+*                                  Stories                                 *
+***************************************************************************** -->
 		<section class="col col-md-9 col-lg-6" id="centralSection">
-
 			<ul class="list-group list-group-horizontal">
 				<li class="flex-fill">
 					<img class="rounded-circle" src="Imagenes/iconPerfiles/sinIcon.jpg" alt="iconStory">

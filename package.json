@@ -1,0 +1,28 @@
+{
+  "name": "practicas-servidor",
+  "version": "1.0.0",
+  "description": "Mis practicas",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maoblink/training.git"
+  },
+  "keywords": [
+    "practicas"
+  ],
+  "author": "Maoblinck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maoblink/training/issues"
+  },
+  "homepage": "https://github.com/Maoblink/training#readme",
+  "devDependencies": {
+    "jest": "^28.1.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
