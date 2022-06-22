@@ -35,6 +35,11 @@ function obtenerAltura(medir, modificar, css, cuenta, replies){
 	}
 }
 
+// ****************************************************************************
+// *                            Comments Functions                            *
+// ****************************************************************************
+
+
 function sendComment(target, textArea){
 
 	console.log("----------");
@@ -203,6 +208,11 @@ function deleteComment(idComentario){
 	});
 };
 
+// ****************************************************************************
+// *                            Interface Functions                           *
+// ****************************************************************************
+
+
 function displayMenu(target){
 
 	console.log("-----------");
@@ -235,6 +245,15 @@ function displayMenu(target){
 
 };
 
+function createPost(user, text, image){
+	console.log("---------");
+	console.log("createPost JS Function");
+	console.log("texto: "+text+" User: "+user+" Image: "+image);
+	
+	$.post("php/createPost.php", {text:text, user:user, image:image}, function(datos){
+		$("#crearPublicacion").after(datos);
+	});
+};
 
 $(document).ready(function(){
   $('.commentBody').keypress(function(e) {

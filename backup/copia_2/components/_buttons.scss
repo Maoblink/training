@@ -55,6 +55,13 @@ a{
 	}
 }
 
+.marcoCircularBtn{
+	width: 3.3em;
+	background-color: $fondoBtnTop;
+	border-radius: 50%;
+	padding: 12px;
+}
+
 .closeBtn{
 	border-radius: 50%;
 	background-color: $hoverBtn;

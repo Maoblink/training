@@ -346,7 +346,7 @@ body {
   color: #747474;
   width: 100%; }
   .menuBtn:hover {
-    background-color: rgba(107, 107, 107, 0.25); }
+    background-color: rgba(70, 70, 70, 0.5); }
   .menuBtn:focus {
     background-color: rgba(0, 96, 180, 0.25);
     color: #298fea; }
@@ -357,7 +357,7 @@ body {
   color: #747474;
   width: 100%; }
   .menuBtnDark:hover {
-    background-color: rgba(107, 107, 107, 0.25); }
+    background-color: rgba(70, 70, 70, 0.5); }
   .menuBtnDark:focus {
     background-color: rgba(0, 96, 180, 0.25);
     color: #298fea; }
@@ -389,7 +389,7 @@ a {
 
 .closeBtn {
   border-radius: 50%;
-  background-color: rgba(107, 107, 107, 0.25);
+  background-color: rgba(90, 90, 90, 0.5);
   border: none;
   color: gray; }
   .closeBtn:hover {
@@ -397,12 +397,32 @@ a {
 
 .publicBtn {
   background-color: rgba(90, 90, 90, 0.5);
-  border-radius: 4px;
+  border-radius: 5px;
   border: none;
   color: #cfd1d7;
   padding: 5px;
   font-size: 14px;
   font-weight: 600; }
+  .publicBtn.hover:hover {
+    background-color: rgba(107, 107, 107, 0.45); }
+
+.hoverBtn1 {
+  background-color: rgba(70, 70, 70, 0.5) !important; }
+  .hoverBtn1:hover {
+    background-color: rgba(90, 90, 90, 0.5) !important; }
+
+.hoverBtn1-static {
+  background-color: rgba(70, 70, 70, 0.5); }
+
+.whiteBtn {
+  background-color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 18px 10px 18px;
+  font-size: 16px;
+  font-weight: 600; }
+  .whiteBtn img {
+    margin-right: 5px; }
 
 .checkLabel {
   display: block;
@@ -484,7 +504,7 @@ a {
   background: transparent; }
 
 .sideBar:hover::-webkit-scrollbar-thumb {
-  background: rgba(107, 107, 107, 0.25); }
+  background: rgba(70, 70, 70, 0.5); }
 
 ::-webkit-scrollbar-track {
   border-radius: 100px; }
@@ -535,7 +555,7 @@ button + .hiddenMenu {
   position: relative;
   right: -2.5em;
   top: -14em;
-  border: 1px solid rgba(107, 107, 107, 0.25);
+  border: 1px solid rgba(70, 70, 70, 0.5);
   width: 11.5em; }
   @media screen and (max-width: 895px) {
     .hiddenMenu {
@@ -548,7 +568,7 @@ button + .hiddenMenu {
       color: #747474;
       text-decoration: none; }
       .hiddenMenu li a:hover {
-        background-color: rgba(107, 107, 107, 0.25); }
+        background-color: rgba(70, 70, 70, 0.5); }
 
 #seccionBanner {
   margin-top: 3.8em;
@@ -694,61 +714,68 @@ aside > div {
     min-width: 2em;
     margin-right: 1em; }
 
-#creatPostForm {
+#fondoOpaco {
+  display: none;
+  background-color: rgba(1, 1, 1, 0.74);
   position: absolute;
-  /* top: 23%;
-  left: 23%; */
+  z-index: 2;
+  width: 100%;
+  height: 100%; }
+
+#createPostForm {
   background-color: #2f2f2f;
   border-radius: 15px;
   color: white;
-  width: 550px;
-  z-index: 2;
+  display: none;
+  left: 0;
   margin-left: auto;
   margin-right: auto;
-  left: 0;
-  right: 0; }
-  #creatPostForm .avatarPoster {
+  position: absolute;
+  right: 0;
+  width: 550px;
+  z-index: 3; }
+  #createPostForm .avatarPoster {
     margin: 13px 0px 13px 20px; }
-  #creatPostForm #createMenu {
+  #createPostForm #createMenu {
     list-style: none;
     border: 2px solid #494c4c;
     border-radius: 15px;
     padding: 12px 0px;
     margin: 30px 20px 15px 20px;
     padding: 15px 20px; }
-    #creatPostForm #createMenu #createMenuPoints button {
+    #createPostForm #createMenu #createMenuPoints button {
       padding-bottom: 3px;
       border-radius: 50%; }
-    #creatPostForm #createMenu #createMenuPoints img {
+    #createPostForm #createMenu #createMenuPoints img {
       width: 1em;
       height: 0.6em; }
-    #creatPostForm #createMenu li img {
+    #createPostForm #createMenu li img {
       width: 2em;
       height: 1.7em; }
-    #creatPostForm #createMenu li {
+    #createPostForm #createMenu li {
       margin: 2px 3px; }
-  #creatPostForm li:first-child {
+  #createPostForm li:first-child {
     padding: 0.4em 0em;
     color: #cfd1d7;
     font-weight: 700; }
-  #creatPostForm h3 {
+  #createPostForm h3 {
     font-size: 23px;
     font-weight: 700; }
-  #creatPostForm h2 {
+  #createPostForm h2 {
     font-size: 15px;
     font-weight: 700;
     color: #cfd1d7; }
-  #creatPostForm textarea {
+  #createPostForm textarea {
     background-color: transparent;
     border: none;
     width: 96.5%;
     min-height: 120px;
     caret-color: #747474;
     color: #cfd1d7; }
-    #creatPostForm textarea:focus {
+    #createPostForm textarea:focus {
       outline: none;
       border: none; }
-    #creatPostForm textarea::placeholder {
+    #createPostForm textarea::placeholder {
       font-size: 1.7em;
       font-weight: 500; }
 
@@ -785,11 +812,12 @@ aside > div {
 #createContentWrapper {
   text-align: center;
   max-height: 220px;
-  overflow: auto; }
+  overflow: auto;
+  margin: 0px 15px; }
 
 #createMenuSecondary {
   list-style: none;
-  margin: 4px 12px 5px 12px;
+  margin: 4px 0px 10px 0px;
   padding: 0px; }
   #createMenuSecondary img {
     max-width: 1.7em; }
@@ -803,6 +831,67 @@ aside > div {
 
 #createSubmitWrapper {
   margin: 0px 20px 20px 20px; }
+
+#dragNDropWrapper {
+  border: 2px solid #494c4c;
+  border-radius: 10px;
+  margin: 5px 0px 0px 0px;
+  padding: 10px; }
+
+#dragNDrop {
+  position: relative;
+  margin-bottom: 15px;
+  padding: 30px 0px 30px 0px;
+  border-radius: 8px; }
+  #dragNDrop .closeBtn {
+    position: absolute;
+    top: 8px;
+    right: 6px;
+    width: 30px;
+    height: 30px;
+    padding-left: 7px;
+    padding-top: 1px;
+    padding-bottom: 3px;
+    z-index: 3; }
+  #dragNDrop .dz-preview {
+    background-color: transparent;
+    width: 100%;
+    max-height: 200px;
+    margin: 0px; }
+    #dragNDrop .dz-preview img {
+      width: 100%;
+      height: 200px; }
+  #dragNDrop .dz-image {
+    width: 100%;
+    height: 200px; }
+  #dragNDrop .dz-massage img {
+    width: 3em; }
+  #dragNDrop #dragNDropOptions {
+    position: absolute;
+    left: 15px;
+    top: 15px; }
+  #dragNDrop #editImageNewPost {
+    margin-right: 10px; }
+  #dragNDrop h3 {
+    margin-bottom: 0px;
+    font-size: 19px;
+    font-weight: 500;
+    color: #cfd1d7; }
+  #dragNDrop p {
+    color: #747474; }
+
+#phoneImageDrop {
+  border-radius: 8px;
+  padding: 12px; }
+  #phoneImageDrop .marcoCircularBtn {
+    width: 3em; }
+  #phoneImageDrop p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #cfd1d7;
+    padding-top: 10px; }
+  #phoneImageDrop button {
+    padding: 10px; }
 
 #addToPostOptions {
   list-style: none; }
@@ -879,7 +968,7 @@ aside > div {
   #centralSection .publicacion .interacciones {
     display: none; }
   #centralSection .publicacion #btnCreate {
-    background-color: rgba(107, 107, 107, 0.25);
+    background-color: rgba(70, 70, 70, 0.5);
     color: #747474; }
     #centralSection .publicacion #btnCreate:hover {
       background-color: rgba(107, 107, 107, 0.45); }
@@ -932,7 +1021,7 @@ aside > div {
     display: none;
     padding-left: 8px; }
     #centralSection .publicacion .commentMenu:hover {
-      background-color: rgba(107, 107, 107, 0.25); }
+      background-color: rgba(70, 70, 70, 0.5); }
     #centralSection .publicacion .commentMenu img {
       max-width: 1em; }
   #centralSection .publicacion .commentP {
@@ -959,7 +1048,7 @@ aside > div {
     #centralSection .publicacion .commentMenuBlock li {
       width: 100%; }
     #centralSection .publicacion .commentMenuBlock a:hover {
-      background-color: rgba(107, 107, 107, 0.25); }
+      background-color: rgba(70, 70, 70, 0.5); }
   #centralSection .publicacion .hilo {
     display: none;
     position: absolute;

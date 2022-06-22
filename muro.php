@@ -9,10 +9,12 @@
 	<link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.css">
 	<link rel="stylesheet" href="CSS/main.css">
 	<link rel="icon" type="image.x-icon" href="Imagenes/iconosMenu/diceIcon.png">
+	<link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 
 	<script src="Javascript/jquery.js"></script>
 	<script src="Javascript/live.js"></script>
 	<script src="Javascript/jquery.autoresize.min.js"></script>
+	<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 	<script src="Javascript/funciones.js"></script>
 	<script src="Javascript/pages/muro.js"></script>
 
@@ -50,12 +52,11 @@
 <!-- ****************************************************************************
 *                             Create Post Form                             *
 **************************************************************************** -->
-
-		<form action="" id="creatPostForm">
+<form id="createPostForm" action="php/createPost.php" method="POST" enctype=”multipart/form-data”>
 			<div class="collapse multi-collapse audience-collapse show" id="createPostWrapper">
 				<div class="createFormHeader" id="createPostHeader">
 					<h3 class="mx-auto">Crear Publicación</h3>
-					<button class="closeBtn">X</button>
+					<button type="button" class="closeBtn">X</button>
 				</div>
 
 				<div id="createPostBody">
@@ -69,14 +70,35 @@
 						</div>
 					</div>
 
+					<input type="hidden" name="user" id="userInputPost" value="<?php echo ($userSession);?>">
+
 					<div id="createContentWrapper">
 						<textarea name="text" id="creatPostText" placeholder="¿Qué estás pensando, <?php echo ($nameSession); ?>?"></textarea>
-					</div>
 
-					<ul class="d-flex" id="createMenuSecondary">
-						<li class="me-auto"><a role="button"><img src="Imagenes/iconosMenu/colorRullet.png" alt="Añadir Emojis"></a></li>
-						<li><a role="button"><img src="Imagenes/iconosMenu/emoji.png" alt="Añadir Emojis"></a></li>
-					</ul>
+						<ul class="d-flex" id="createMenuSecondary">
+							<li class="me-auto"><a role="button"><img src="Imagenes/iconosMenu/colorRullet.png" alt="Añadir Emojis"></a></li>
+							<li><a role="button"><img src="Imagenes/iconosMenu/emoji.png" alt="Añadir Emojis"></a></li>
+						</ul>
+
+						<div id="dragNDropWrapper">
+
+							<div class="hoverBtn1 dropzone" id="dragNDrop">
+								<button type="button" class="closeBtn">X</button>
+								<div class="dz-message" data-dz-message>
+									<img class="marcoCircularBtn" src="Imagenes/iconosMenu/cameraIcon.png" alt="Añadir Imagen">
+									<h3>Añadir fotos/videos</h3>
+									<p>o usa la opción de arrastrar y soltar</p>
+								</div>
+							</div>
+
+							<div class="hoverBtn1-static d-flex align-items-center" id="phoneImageDrop">
+								<img class="marcoCircularBtn me-3" src="Imagenes/iconosMenu/smartphone.png" alt="Añadir Imagen desde Telefono">
+								<p>Añadir fotos o vídeos desde tu dispositivo móvil.</p>
+								<button class="publicBtn hover ms-auto">Añadir</button>
+							</div>
+
+						</div>
+					</div>
 
 					<ul class="d-flex justify-content-between" id="createMenu">
 						<li><a role="button">Añadir a tu Publicación</a></li>
@@ -89,7 +111,7 @@
 					</ul>
 
 					<div class="d-grid gap-2" id="createSubmitWrapper">
-						<button class="btn btn-primary" id="createSubmit">Publicar</button>
+						<button class="btn btn-primary" type="submit" id="createSubmit">Publicar</button>
 					</div>
 
 				</div>
@@ -208,6 +230,8 @@
 			</div>
 
 		</form>
+
+		<div id="fondoOpaco"></div>
 
 <!-- ****************************************************************************
 *                               Left Side Bar                              *

@@ -64,7 +64,7 @@ a{
 
 .closeBtn{
 	border-radius: 50%;
-	background-color: $hoverBtn;
+	background-color: $fondoBtnTop;
 	border: none;
 	color: gray;
 
@@ -75,10 +75,39 @@ a{
 
 .publicBtn{
 	background-color: $fondoBtnTop;
-	border-radius: 4px;
+	border-radius: 5px;
 	border: none;
 	color: $letras;
 	padding: 5px;
 	font-size: 14px;
 	font-weight: 600;
+
+	&.hover:hover{
+		background-color: $hoverBtn-2;
+	}
+}
+
+.hoverBtn1{
+	background-color: $hoverBtn !important;
+
+	&:hover{
+		background-color: $fondoBtnTop !important;
+	}
+}
+
+.hoverBtn1-static{
+	background-color: $hoverBtn;
+}
+
+.whiteBtn{
+	background-color: white;
+	border: none;
+	border-radius: 7px;
+	padding: 10px 18px 10px 18px;
+	font-size: 16px;
+	font-weight: 600;
+
+	img{
+		margin-right: 5px;
+	}
 }

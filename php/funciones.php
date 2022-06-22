@@ -1,4 +1,6 @@
-<?php 
+<?php
+$rootServer = realpath($_SERVER["DOCUMENT_ROOT"]);
+
 
 function tiempo_pasado($tiempo){
 

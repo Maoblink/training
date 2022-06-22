@@ -159,13 +159,14 @@ aside{
 
 }
 
+
 #createPostHeader{
 	
 	.closeBtn{
 		position: absolute;
 		top: 0.5em;
 		left: 20.9em;
-		padding: 3px;
+		padding: 7px;
 	}
 }
 
@@ -175,9 +176,17 @@ aside{
 	text-align: center;
 
 	.closeBtn{
-		width: 1.6em;
-		height: 1.6em;
+		position: absolute;
+		top: 0.4em;
+		left: 0.4em;
 		font-size: 1.5em;
+		padding: 7px;
+
+		img{
+			position: relative;
+			top: -2px;
+			width: 1.2
+		}
 	}
 
 }
@@ -246,18 +255,46 @@ aside{
 #addToPostHeader{
 
 	.closeBtn{
-		position: absolute;
-		top: 0.4em;
-		left: 0.4em;
 		padding: 0px 3px 3px 3px;
 	}
+}
+
+#audienceMenu{
+	max-height: 500px;
+	overflow: scroll;
+	padding: 0px 20px;
 }
 
 #audienceMenuOptions{
 	width: 100%;
 
+	.checkmark{
+		left: 0.9em;
+	}
+
+	button{
+		border-radius: 15px;
+		text-align: left;
+
+		&:hover{
+			color: $letras;
+		}
+	}
+
+	div + img{
+		width: 0.8em;
+	}
+
 	h4{
 		color: $letras;
+		font-size: 1.2em;
+		font-weight: 700;
+		margin-bottom: 0px;
+	}
+
+	p{
+		font-weight: 500;
+		margin-top: 0px;
 	}
 }
 
